@@ -1,0 +1,18 @@
+snippet pkg "Automatic template for Autobuild defines" !b
+PKGNAME=${1}
+PKGSEC=${2:utils}
+PKGDEP="${3:glibc}"
+PKGDES="${4}"
+BUILDDEP="${5}"
+
+${6:More Options Here}
+${0}
+endsnippet
+
+snippet pat "Automatic template for Autobuild patches" !b
+for i in autobuild/patches/*.patch; do
+	patch -Np1 -i $i
+done
+${0}
+endsnippet
+
